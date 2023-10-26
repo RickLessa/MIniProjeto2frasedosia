@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fraseViewer = findViewById(R.id.fraseViewerXML);
-        btFrase = (Button) findViewById(R.id.btFraseXML);
+        btFrase = findViewById(R.id.btFraseXML);
 
         // Criar listener para botao "btFrase" e
         // fazer a textview "fraseViewer" receber string do array "frases"
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btFrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Animation respostaBT = AnimationUtils.loadAnimation(MainActivity.this, R.anim.blink_anim);
+                Animation respostaBT = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
                 btFrase.startAnimation(respostaBT); // Resolver Animação em Loop
                 int f = new Random().nextInt(frases.length);
                 fraseViewer.setText(frases[f]);
